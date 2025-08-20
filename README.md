@@ -132,23 +132,6 @@ python -m src.main --config config.yaml
 
 ---
 
-## 🧭 How it Works
-
-```mermaid
-flowchart LR
-A[Fetch arXiv: cs.AI/LG/CL] --> B[Local LLM classify 5 labels]
-B --> C[Pick Top-K per label]
-C --> D[PDF extract pages (max_pages)]
-D --> E[Map (per-page bullets)]
-E --> F[Reduce → TL;DR + Method Card + Discussion]
-F --> G[SOTA & Repro Checklist]
-G --> H[Markdown clean/format]
-H --> I[Export: report.md + report.docx]
-I --> J[Email (HTML + Attachments)]
-I --> K[Progress JSON update]
-```
-
----
 
 ## 🛠️ Commands
 
