@@ -1,0 +1,45 @@
+run:
+  recency_days: 6
+  max_papers: 600
+  categories: [cs.AI, cs.LG, cs.CL]
+  output_dir: papers
+  output_markdown: report.md
+  output_docx: report.docx
+  progress_file: run_status.json
+  dedupe_db: state.json
+
+llm:
+  provider: ollama
+  endpoint: http://localhost:11434
+  model: qwen2.5-coder:14b
+
+classification:
+  labels: [Agent, LLM, Memory, RAG]
+  top_k_per_label: 10
+  use_full_text: false
+
+summarization:
+  max_pages: 12
+  map_chunk_chars: 4500
+  overlap: 200
+  generate_sota: true
+  generate_repro: true
+  team_prompts: true
+
+bilingual:
+  enabled: false
+  primary: en
+  secondary: zh
+
+email:
+  enabled: false
+  smtp_server: smtp.qq.com
+  smtp_port: 465
+  username: "you@example.com"
+  password: "app-password"
+  from_addr: "you@example.com"
+  to_addrs: ["you@example.com"]
+
+slack:
+  enabled: false
+  webhook_url: ""
